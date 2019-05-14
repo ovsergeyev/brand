@@ -1,17 +1,16 @@
 module.exports = function () {
     $.gulp.task('stylus', function () {
-        return $.gulp.src('src/stylus/main.styl')
-            .pipe($.gp.sourcemaps.init())
+        return $.gulp.src('src/static/stylus/main.styl')
+            .pipe($.plumber({
+                errorHandler: $.gp.notify.onError()
+            }))
+            // .pipe($.gp.sourcemaps.init())
             .pipe($.gp.stylus({}))
             .pipe($.gp.autoprefixer({
-                browsers: ['last 10 versions'],
+                browsers: ['last 1 versions'],
                 cascade: false
             }))
-            .on("error", $.gp.notify.onError({
-                titile: "stile"
-            }))
-            .pipe($.gp.csso())
-            .pipe($.gp.sourcemaps.write())
+            .pipe($.gp.cssbeautify())
             .pipe($.gulp.dest('build/css/'))
             //.on('end', browserSync.reload);
             .pipe($.bs.reload({

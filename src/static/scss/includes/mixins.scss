@@ -1,0 +1,8 @@
+@mixin body() {
+  font-family: $font;
+  color: $first-color;
+}
+
+@mixin bd($color: red) {
+  border: 1px solid $color;
+}
