@@ -1,9 +1,9 @@
 @import "includes/config";
 @import "includes/mixins";
-@import "includes/socials";
 
 body {
   @include body;
+  background-color: red;
 }
 
 .container {
@@ -1654,5 +1654,7 @@ body {
   .text {
   }
 }
+
+@import "includes/socials";
 
 

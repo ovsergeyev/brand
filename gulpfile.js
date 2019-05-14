@@ -18,7 +18,7 @@ $.path.tasks.forEach(function (taskPath) {
 
 $.gulp.task('default', $.gulp.series(
     //$.gulp.parallel('pug', 'stylus'),
-    //$.gulp.parallel('pug', 'less'),
+    // $.gulp.parallel('pug', 'less', 'img:dev'),
     $.gulp.parallel('pug', 'sass', 'img:dev'),
     $.gulp.parallel('watch', 'serve'),
     'watch',
@@ -27,7 +27,7 @@ $.gulp.task('default', $.gulp.series(
 
 $.gulp.task('build', $.gulp.series(
     //$.gulp.parallel('pug', 'stylus'),
-    //$.gulp.parallel('pug', 'less'),
+    // $.gulp.parallel('pug', 'less', 'img:build'),
     $.gulp.parallel('pug', 'sass', 'img:build'),
     $.gulp.parallel('watch', 'serve'),
     'watch',
