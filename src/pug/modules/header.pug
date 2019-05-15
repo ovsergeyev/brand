@@ -10,8 +10,7 @@ header.header.page__header
                     input.search-form__input(type=text, placeholder="Search for Item...")
                     button.search-form__button
         .header__right
-            .cart
-                img(src="img/cart.svg").cart__img
-                a.button.cart__button My Account
-                    i(class="fas fa-caret-down").cart__i
+            include ../modules/cart
+            a(href="#").button.profile-button My Account
+                i(class="fas fa-caret-down").profile-button__i
 //End block header

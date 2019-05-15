@@ -1,8 +1,12 @@
-//- var items = ["vk", "facebook-f", "twitter", "linkedin-in", "pinterest-p", "google-plus-g"]
-- var items = ["facebook-f", "twitter", "linkedin-in", "pinterest-p", "google-plus-g"]
+- var items = [["facebook-f", "active"], ["twitter", "active"], ["linkedin-in", "not active"], ["pinterest-p", "active"], ["google-plus-g", "active"]]
 
 ul.socials
     each item in items
         li.socials__li
-            a(href="#").socials__link
-                i(class="fab fa-"+ item)
+            case item[1]
+                when "active"
+                    a(href="#").socials__link
+                        i(class="fab fa-"+ item[0])
+                when "not active"
+                    a(href="#").socials__link_not-active
+                        i(class="fab fa-" + item[0])

@@ -3,7 +3,6 @@
 
 body {
   @include body;
-  background-color: red;
 }
 
 .container {
@@ -63,6 +62,11 @@ body {
 
   &__cart-buttons {
     margin-top: 45px;
+  }
+
+  &__deal{
+    margin-top: 63px;
+    margin-bottom: 80px;
   }
 
   &__may-like {
@@ -151,6 +155,9 @@ body {
     letter-spacing: 0.35px;
     background: url("../img/b-arrow.png") no-repeat 68px 16px, linear-gradient(to bottom, #f9f9f9 0%, #f5f5f5 100%);
     position: relative;
+    &:hover .drop{
+      display: flex;
+    }
   }
 
   &__input {
@@ -184,19 +191,143 @@ body {
 }
 
 .cart {
-  margin-right: 25px;
-  display: flex;
-  align-items: center;
+  position: relative;
+  &__link{
+    display: block;
+    position: relative;
+    margin-right: 30px;
+    padding-bottom: 15px;
+    margin-top: 17px;
+    &:hover .cart__drop{
+      display: block;
+    }
+  }
 
   &__img {
-    margin-right: 30px;
   }
 
-  &__button {
-    padding-right: 10px;
+  &__drop{
+    display: none;
+    width: 262px;
+    border: 1px solid #ececec;
+    position: absolute;
+    left: -27px;
+    top: 45px;
+    background: #fff;
+    border-radius: 5px;
+    padding: 0 17px 9px;
+    z-index: 1;
+
+    &::after{
+      content: '';
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      transform: rotate(45deg);
+      top: -5px;
+      left: 40px;
+      border-top: 1px solid #ececec;
+      border-left: 1px solid #ececec;
+      background-color: white;
+    }
   }
 
-  &__i {
+  &__item{
+    border-bottom: 1px solid #ededed;
+    position: relative;
+    overflow: hidden;
+    padding: 20px 0;
+  }
+
+  &__product-img{
+    float: left;
+  }
+
+  &__text{
+    float: left;
+    padding-top: 10px;
+    padding-left: 14px;
+  }
+
+  &__title{
+    color: #222222;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__stars{
+    color: #e4af48;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  &__price{
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $second-color;
+    word-spacing: 7px;
+  }
+
+  &__span{
+    font-size: 10px;
+  }
+
+  &__close{
+    position: absolute;
+    right: 15px;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #c0c0c0;
+    font-size: 16px;
+  }
+
+  &__total-amount{
+    display: flex;
+    justify-content: space-between;
+    margin: 17px 17px 27px;
+    color: #222222;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__total{
+
+  }
+
+  &__amount{
+
+  }
+
+  &__button{
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #4a4a4a;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 19px 0;
+    margin-bottom: 11px;
+    &:hover{
+      border: 1px solid $second-color;
+      color: $second-color;
+    }
+  }
+}
+
+.profile-button{
+  display: block;
+  padding-right: 10px;
+  &__i{
     margin: 0 0 0 10px;
   }
 }
@@ -407,49 +538,49 @@ body {
 
 .sidebar {
   width: 245px;
-
-  &__item {
+  &__details{
+    display: block;
     margin-bottom: 18px;
+    position: relative;
+    & > summary::after{
+      content: '\25B2';
+      position: absolute;
+      right: 10px;
+    }
+    &[open] > summary::after{
+      content: '\25BC';
+      position: absolute;
+      right: 10px;
+    }
   }
-
-  &__head-wrap {
-    display: flex;
+  &__summary{
+    outline: none;
     border-left: 5px solid #ef5b70;
     border-bottom: 1px solid #ebebeb;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__head {
     color: #ef5b70;
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
     padding-left: 10px;
     line-height: 37px;
-  }
-
-  &__i {
-    margin-top: 4px;
-
-    &-active {
-      transform: rotate(180deg);
-      color: #ef5b70;
+    &::-webkit-details-marker{
+      display: none;
     }
   }
-
-  &__ul {
+  &__ul{
     list-style-type: none;
-    margin: 0 20px;
+    margin: 10px 20px 0 20px;
   }
+  &__li{
 
-  &__li {
   }
-
-  &__link {
+  &__link{
     color: #6f6e6e;
     font-weight: 400;
     line-height: 33px;
+    &:hover{
+      color: $second-color;
+    }
   }
 }
 
@@ -1275,7 +1406,119 @@ body {
 }
 
 .deal {
+  display: flex;
+  justify-content: space-between;
+  &__address{
+    width: 355px;
+  }
+  &__title{
+    color: #222222;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
 
+  }
+  &__select{
+    width: 355px;
+    height: 45px;
+    border: 1px solid #eaeaea;
+    background-color: #ffffff;
+    outline: none;
+    margin-bottom: 20px;
+    color: #b1b1b1;
+    font-family: Lato, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    padding-left: 18px;
+  }
+  &__input{
+    width: 335px;
+    height: 43px;
+    border: 1px solid #eaeaea;
+    background-color: #ffffff;
+    outline: none;
+    margin-bottom: 20px;
+    color: #b1b1b1;
+    font-family: Lato, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    padding-left: 18px;
+  }
+  &__button{
+    border: 1px solid #eaeaea;
+    background-color: #ffffff;
+    padding: 12px 15px;
+    color: #4a4a4a;
+    font-family: Lato, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+  }
+  &__coupon{
+    width: 355px;
+  }
+  &__text{
+    color: #000000;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+  &__wrap-check{
+
+  }
+  &__check{
+    width: 276px;
+    background-color: #f5f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 42px;
+  }
+  &__total{
+    width: 100%;
+    padding-bottom: 22px;
+  }
+  &__sub-total{
+    height: 12px;
+    color: #4a4a4a;
+    font-family: Lato, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: right;
+    margin-bottom: 14px;
+  }
+  &__grand-total{
+    height: 16px;
+    color: #222222;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: right;
+  }
+  &__span{
+    padding-left: 20px;
+  }
+  &__check-button{
+    display: inline-block;
+    padding: 15px 38px;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__wrap-button{
+    border-top: 1px solid #e2e2e2;
+    padding-top: 17px;
+  }
 }
 
 .pagination {
@@ -1655,6 +1898,6 @@ body {
   }
 }
 
-@import "includes/socials";
+@import "lib/_socials";
 
 
