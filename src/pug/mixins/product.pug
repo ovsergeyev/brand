@@ -4,6 +4,6 @@ mixin product(name, price, link, imgsrc)
             .product__img-box
                 img(src=""+imgsrc alt="product").product__img
             .product__text
-                a(href=""+link).product__name= name
-                a(herf=""+link).product__price= price
-            a(href=""+link).product__add Add to Cart
+                span.product__name= name
+                span.product__price= price
+            span.product__add Add to Cart

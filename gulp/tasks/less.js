@@ -8,7 +8,7 @@ module.exports = function () {
             .pipe($.gp.less({}))
             .pipe($.gp.autoprefixer({
                 browsers: ['last 1 versions'],
-                cascade: false
+                cascade: true
             }))
             .pipe($.gp.cssbeautify())
             .pipe($.gulp.dest('build/css/'))
