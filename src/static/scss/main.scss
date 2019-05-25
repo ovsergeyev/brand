@@ -26,6 +26,12 @@ body {
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.38px;
+  transition: all 0.3s;
+  &:hover{
+    background-color: white;
+    outline: 1px solid $second-color;
+    color: $second-color;
+  }
 }
 
 .pink {
@@ -360,6 +366,7 @@ body {
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
+    transition: color 0.3s;
   }
 }
 
@@ -401,6 +408,7 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 28px;
+    transition: color 0.3s;
 
     &:hover {
       color: $second-color;
@@ -490,9 +498,10 @@ body {
     line-height: 20px;
     text-transform: uppercase;
     color: #636363;
+    transition: color 0.3s;
 
     &:hover {
-      color: #f16d7f;
+      color: $second-color;
     }
   }
 }
@@ -515,6 +524,11 @@ body {
     font-weight: 400;
     position: absolute;
     top: 777px/2 - 47px/2;
+    cursor: pointer;
+    transition: background 0.3s;
+    &:hover{
+      background-color: lighten(#2a2a2a, 40%);
+    }
   }
 
   &__ahead {
@@ -523,12 +537,16 @@ body {
     background-color: lighten(#2a2a2a, 60%);
     line-height: 47px;
     text-align: center;
-    color: #ffffff;
     font-size: 24px;
     font-weight: 400;
     position: absolute;
     top: 777px/2 - 47px/2;
     right: 0;
+    cursor: pointer;
+    transition: background 0.3s;
+    &:hover{
+      background-color: lighten(#2a2a2a, 40%);
+    }
   }
 
   &__img {
@@ -578,6 +596,7 @@ body {
     color: #6f6e6e;
     font-weight: 400;
     line-height: 33px;
+    transition: color 0.3s;
     &:hover{
       color: $second-color;
     }
@@ -1051,10 +1070,9 @@ body {
   &__button {
     display: inline-block;
     padding-right: 15px;
-
-    & img {
-      margin-bottom: 1px;
-      margin-left: 3px;
+    i{
+      position: relative;
+      top: 1px;
     }
   }
 }
@@ -1364,6 +1382,10 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 25px;
+    transition: color 0.3s;
+    &:hover{
+      color: $second-color;
+    }
   }
 
   &__line {
@@ -1389,6 +1411,7 @@ body {
     padding-left: 15px;
   }
   &__close{
+    transition: color 0.3s;
     &:hover{
       color: $second-color;
     }
@@ -1476,6 +1499,10 @@ body {
     text-transform: uppercase;
     outline: none;
     cursor: pointer;
+    transition: color 0.3s;
+    &:hover {
+      color: $second-color;
+    }
   }
   &__coupon{
     width: 355px;
@@ -1554,13 +1581,18 @@ body {
   &__button {
     height: 44px;
     border-radius: 3px;
-    border: 1px solid #ef5b70;
+    border: 1px solid $second-color;
     background-color: #ffffff;
-    color: #ef5b70;
+    color: $second-color;
     font-size: 16px;
     font-weight: bold;
     line-height: 44px;
     padding: 0 45px;
+    transition: all 0.3s;
+    &:hover {
+      background-color: $second-color;
+      color: white;
+    }
   }
 
   &__angle-left {
@@ -1810,7 +1842,7 @@ body {
   align-content: center;
   justify-content: center;
 
-  input {
+  &__input {
     border-radius: 23px 0 0 23px;
     border: 1px solid transparent;
     background-color: #e1e1e1;
@@ -1821,7 +1853,7 @@ body {
     padding: 0 25px;
   }
 
-  button {
+  &__button {
     border-radius: 0 23px 23px 0;
     border: 1px solid transparent;
     background-color: #f16d7f;
@@ -1832,6 +1864,12 @@ body {
     letter-spacing: 0.35px;
     height: 46px;
     outline: none;
+    transition: all 0.3s;
+    &:hover{
+      background-color: white;
+      border: 1px solid $second-color;
+      color: $second-color;
+    }
   }
 }
 
@@ -1887,6 +1925,7 @@ body {
     font-weight: 400;
     letter-spacing: 0.4px;
     margin-bottom: 10px;
+    transition: color 0.3s;
 
     &:hover {
       color: $second-color;
