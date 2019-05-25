@@ -28,7 +28,7 @@ $.gulp.task('default', $.gulp.series(
 $.gulp.task('build', $.gulp.series(
     //$.gulp.parallel('pug', 'stylus'),
     // $.gulp.parallel('pug', 'less', 'img:build'),
-    $.gulp.parallel('pug', 'sass', 'img:build'),
+    $.gulp.parallel('pug', 'sass', 'img:build', 'img:svg'),
     $.gulp.parallel('watch', 'serve'),
     'watch',
     'serve'
